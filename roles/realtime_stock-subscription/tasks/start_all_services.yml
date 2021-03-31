@@ -1,0 +1,27 @@
+---
+- name: Verify services before start
+  shell: pm2 list
+  register: pm2_list
+
+- name: Start all services Subscription and save
+  shell: cd /data/stock-subscription && pm2 start ./pm2/cluster.config.json
+  when: "pm2_list.stdout.find('ssi-subscription') == -1"
+#changed_when: "'ssi-subscription' not in pm2listout2.stdout"
+
+
+- name: Clear dump log
+  shell: pm2 cleardump
+
+- name: Startup services and save
+  become: no
+  shell: pm2 startup systemd -u iboard --hp /home/iboard && pm2 save
+
+#- name: Startup services
+#  shell: timeout 15 pm2 log ssi-subscription
+#  register: logsubscription
+#  changed_when: "'error' not in logsubscription"
+#  notify:
+#    - clear dump
+#    - startup services
+#    - save services
+

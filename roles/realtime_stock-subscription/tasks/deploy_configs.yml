@@ -1,0 +1,7 @@
+  - name: configure production
+    template:
+     src: "{{ role_path }}/templates/env.j2"
+     dest: "/data/stock-subscription/.env"
+     owner: iboard
+     group: iboard
+     mode: '0644'

@@ -1,0 +1,24 @@
+---
+- name: Verify services before start
+  shell: pm2 list
+  register: pm2listout2
+
+- name: Start all services Subscription and save
+  debug:
+    msg: "{{ pm2listout2.stdout }}"
+  changed_when: "'ssi-subscription' not in pm2listout2.stdout"
+  notify:
+    - start ssi-subscription
+    - clear dump
+    - startup services
+    - save services
+
+#- name: Startup services
+#  shell: timeout 15 pm2 log ssi-subscription
+#  register: logsubscription
+#  changed_when: "'error' not in logsubscription"
+#  notify:
+#    - clear dump
+#    - startup services
+#    - save services
+

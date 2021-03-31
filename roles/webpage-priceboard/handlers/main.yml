@@ -1,0 +1,19 @@
+- name: restart pm2
+  become: yes
+  become_user: iboard
+  shell: pm2 restart ssi-priceboard
+  
+- name: stop pm2
+  shell: pm2 stop ssi-priceboard
+  
+- name: delete pm2
+  shell: pm2 delete ssi-priceboard
+
+- name: save pm2
+  shell: pm2 save
+
+- name: start pm2
+  shell: pm2 start /data/ssi-priceboard/pm2/cluster.config.json
+
+
+

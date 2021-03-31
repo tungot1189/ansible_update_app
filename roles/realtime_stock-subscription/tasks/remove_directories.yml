@@ -1,0 +1,6 @@
+---
+- name: remove directories
+  file:
+   path: "/data/stock-subscription/{{ item }}"
+   state: absent
+  with_items: "{{ directories_list }}"

@@ -1,0 +1,14 @@
+  - name: netstat to check specified ports listening
+    become: yes
+    shell: /bin/netstat -plntu |  grep "{{ item }}"
+    with_items:
+      - 80
+    changed_when: false
+    register:
+      netstat_result
+
+  - name: Print result
+    debug:
+      msg: "netstat result output: {{ netstat_result.results }}"
+   # with_items:
+   # - "{{ netstat_result.results }}"

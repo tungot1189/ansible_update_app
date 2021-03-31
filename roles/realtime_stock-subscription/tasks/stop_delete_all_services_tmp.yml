@@ -1,0 +1,13 @@
+#---
+ - name: Verify services subscription
+   shell: pm2 list
+   register: pm2listout
+
+ - name: Stop services subscription
+   debug:
+    msg: "{{ pm2listout.stdout }}"
+   changed_when: "'ssi-subscription' in pm2listout.stdout"
+   notify:
+    - stop ssi-subscription
+    - delete ssi-subscription
+    - flush log

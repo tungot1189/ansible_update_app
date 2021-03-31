@@ -1,0 +1,4 @@
+#vars file for subscription
+directories_list: 
+    - logs
+    - dist

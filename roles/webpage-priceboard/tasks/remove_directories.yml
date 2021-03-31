@@ -1,0 +1,7 @@
+---
+- name: remove directories
+  file:
+   path: "/data/ssi-priceboard/{{item}}"
+   state: absent
+  with_items:
+    - build
