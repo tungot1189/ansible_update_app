@@ -1,0 +1,5 @@
+#vars file for subscription
+app_path: '/data/stock-subscription'
+directories_list: 
+    - logs
+    - dist
