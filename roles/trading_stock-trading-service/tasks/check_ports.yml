@@ -1,7 +1,0 @@
-  - name: Check specified ports 9008 listening
-    shell: /bin/netstat -tln |  grep "{{ item }} " | sed -e 's/.*\///'
-    register:
-      checkport_result
-    with_items:
-      - 9009
-    changed_when: false

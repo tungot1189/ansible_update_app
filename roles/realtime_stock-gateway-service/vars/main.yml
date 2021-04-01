@@ -1,5 +1,0 @@
-#vars file for query servivce
-app_path: '/data/stock-gateway-service'
-directories_list: 
-    - logs
-    - dist

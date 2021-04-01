@@ -1,9 +1,0 @@
----
-# vars file for roles/backup
-Path_Of_Directories: /data/ssi-priceboard
-List_Of_Directories: 
-    - logs
-    - dist    
-List_Of_Files:
-    #- myappenv: '/myapp/env'
-    - '/data/stock-subscription/.env'
