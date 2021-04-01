@@ -1,9 +1,0 @@
-  - name: Deploy config for env
-    template:
-     src: /ansible_task/roles/iboard_webpage/templates/env-config.js.j2
-     dest: /data/ssi-priceboard/build/js/config/env-config.js
-     owner: iboard
-     group: iboard
-     mode: '0644'
-    notify: 
-     - restart pm2
