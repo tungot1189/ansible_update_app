@@ -1,0 +1,7 @@
+  - name: Deploy configure env file to production
+    template:
+     src: "{{ role_path }}/templates/env.j2"
+     dest: "{{ app_path }}/.env"
+     owner: iboard
+     group: iboard
+     mode: '0644'

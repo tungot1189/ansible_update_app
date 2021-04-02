@@ -1,0 +1,5 @@
+#vars file for query servivce
+app_path: '/data/stock-trading-service'
+directories_list: 
+    - logs
+    - dist

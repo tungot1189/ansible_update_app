@@ -1,0 +1,9 @@
+  - name: Deploy config for env
+    template:
+     src: "{{ role_path }}/templates/env-config.js.j2"
+     dest: "{{ env_config_path }}/env-config.js"
+     owner: iboard
+     group: iboard
+     mode: '0644'
+    notify: 
+     - restart pm2

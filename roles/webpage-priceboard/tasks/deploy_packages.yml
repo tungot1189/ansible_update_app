@@ -1,0 +1,14 @@
+  # Unarchive file taz.gz
+#  - name: unarchive dist
+#    unarchive:
+#     src: "/ansible_task/roles/iboard_webpage/files/dist.tar.gz"
+#     dest: "/data/ssi-priceboard"
+#     mode: 0755
+     
+  - name: unarchive build
+    unarchive:
+     src: "/ansible_task/roles/iboard_webpage/files/build.tar.gz"
+     dest: "/data/ssi-priceboard"
+     owner: iboard
+     group: iboard
+     mode: 0755
