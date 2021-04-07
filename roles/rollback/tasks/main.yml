@@ -1,0 +1,24 @@
+# main task for rollback role
+  - name: Remove folder and files updated
+    file:
+     path: "{{ app_path }}/{{ item }}"
+     state: absent
+    with_items: "{{ current_folder }}"
+    
+  - name: Check backup files is available before restore.
+    find:
+     paths: "{{ backup_path }}"
+     patterns: "*.tar.gz"
+     file_type: file
+    register: find_result
+    failed_when: find_result.files < 1
+    
+  - name: Unarchive folder backup to app folder
+    unarchive:
+     src: "{{ item.path }}"
+     dest: "{{ app_path }}"
+     remote_src: yes
+    with_items: "{{ find_result.files }}"
+    
+  - name: Copy files backup to app folder
+    command: cp "{{ backup_path }}/env-config.js_2021-03-09" "{{ env_file_path }}/env-config.js"
