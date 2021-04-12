@@ -1,0 +1,20 @@
+---
+# vars file for ssi-priceboard
+REACT_APP_HOST_SERVER: ''
+REACT_APP_TRADING_VIEW_SERVER: ''
+REACT_APP_SOCKET_SERVER: ''
+REACT_APP_HOST_TRADING: ''
+REACT_APP_SOCKET_TRADING: ''
+REACT_APP_COMPANY_PROFILE: ''
+REACT_APP_MARKETING_BANNER: ''
+REACT_APP_DEFAULT_ALL_STOCK: ''
+RECONNECTION_ATTEMPTS_SOCKET: ''
+#---
+app_path:
+#---
+backup_path:
+#---
+env_config_path:
+#---
+directories_list:
+    - build
