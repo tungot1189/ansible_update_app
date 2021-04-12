@@ -1,0 +1,10 @@
+#vars file for subscription service
+app_path:
+#---
+backup_path:
+#---
+env_config_path:
+#---
+directories_list:
+    - dist
+    - logs

@@ -1,0 +1,9 @@
+---
+# vars file for roles/backup
+app_path:
+#---
+backup_path:
+#---
+env_file_path:
+#---
+directories_list:
