@@ -1,0 +1,19 @@
+---
+
+- name: PlayBook for rollback update role on remote servers
+  hosts:                    #Define servers need to rollback *Required
+  beocme: yes
+  become_user:
+  vars:
+    backup_path:              #Current backup path on remote server *Required
+    app_path:                        #Current app path on remote server *Required
+    env_file_path:   #Current file env config path need to rollback on remote server *Required
+    current_folder:             #Current folder need to remove before rollback on app folder *Required
+        - 
+        - 
+    backup_file:              #File config need to rollback on remote server *Required
+        - 
+  tasks:
+  roles:
+    - rollback
+

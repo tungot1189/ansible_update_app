@@ -1,0 +1,17 @@
+---
+
+- name: PlayBook for backup role on remote servers
+  hosts:                    #Define servers need to backup *Required
+  become: yes
+  become_user:
+  vars:
+    backup_path:             #Current backup path on remote server *Required
+    app_path:                        #Current app path on remote server *Required
+    env_file_path:   #Current fine env config path need to backup on remote server *Required
+    List_Of_Directories:                           #List Folders need to backup on remote server *Required
+        - 
+        - 
+  tasks:
+  roles:
+    - backup
+

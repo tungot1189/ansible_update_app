@@ -1,0 +1,32 @@
+#---Querry service---#
+#Start
+- name: start ssi-stock-query
+  shell: cd /data/stock-query-service && pm2 start ./pm2/cluster.config.json
+
+#Stop
+- name: stop ssi-stock-query
+  shell: pm2 stop ssi-stock-query
+
+#Restart
+- name: restart ssi-stock-query
+  shell: pm2 restart ssi-stock-query
+
+#Delete  
+- name: delete ssi-stock-query
+  shell: pm2 delete ssi-stock-query
+
+#Flush log
+- name: flush log
+  shell: pm2 flush
+
+#Clear dump pm2
+- name: clear dump
+  shell: pm2 cleardump
+
+#Startup services
+- name: startup services
+  shell: pm2 startup
+
+#Save services
+- name: save services
+  shell: pm2 save
