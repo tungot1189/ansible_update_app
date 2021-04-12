@@ -1,7 +1,0 @@
-  - name: Check specified ports 5000 listening
-    shell: /bin/netstat -tln |  grep "{{ item }} " | sed -e 's/.*\///'
-    register:
-      checkport_result
-    with_items:
-      - 5000
-    changed_when: false
