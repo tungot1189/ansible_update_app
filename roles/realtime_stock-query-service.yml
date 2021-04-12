@@ -1,8 +1,0 @@
----
-- name: PlayBook for role update realtime_stock-query-service
-  hosts: realtime
-  serial: 2
-  become: yes
-  become_user: iboard
-  roles:
-    - realtime_stock-query-service

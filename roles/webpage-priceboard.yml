@@ -1,7 +1,0 @@
----
-- name: PlayBook for role update webpage-priceboard
-  hosts: webpage
-  become: yes
-  become_user: iboard
-  roles:
-    - webpage-priceboard

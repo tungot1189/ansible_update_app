@@ -1,8 +1,0 @@
----
-- name: PlayBook for role update trading_stock-trading-service
-  hosts: trading
-  serial: 1
-  become: yes
-  become_user: iboard
-  roles:
-    - trading_stock-trading-service
